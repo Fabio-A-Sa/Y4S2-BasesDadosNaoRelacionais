@@ -14,12 +14,8 @@ No entanto o `Impedance Mismatch` (diferenças de representação entre relation
 - Polyglot persistence, usar diferentes data-stores para diferentes circunstâncias. Assim, as relational databases são apenas mais uma escolha, não a única alternativa;
 - Schemaless data models;
 - Weaker consistency models (scale is easier);
-- 
-
-- non-relational, large scale, distributed and global scope
-- history
 
 ## Agregate Data Models
 
-agregado muito bom para distribuição
-em relacional não podemos distribuir porque as interdependências entre as tabelas são bastantes
+- Better in distributed systems;
+- Em relational models a distribuição dos dados é difícil já que existem muitas interdependênicas entre tabelas;
