@@ -25,3 +25,7 @@
 ## Refs
 
 - https://db-engines.com/en/ranking/document+store
+
+## Questions
+
+- O professor vai dar repositório ou nós fazemos o nosso?
