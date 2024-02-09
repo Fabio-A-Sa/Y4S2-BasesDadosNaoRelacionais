@@ -5,11 +5,16 @@ As bases de dados relacionais são as mais comuns por permitirem:
 - Persistence;
 - Concurrency;
 - Integration;
-- Standard, SQL;
+- Standard, with SQL statements;
 
-No entanto o `Impedance Mismatch` (), acabou por tornar 
+No entanto o `Impedance Mismatch` (diferenças de representação entre relational data model and in-memory datastructures), acabou por tornar popular o NoSQL (Not Only SQL), que possibilita a tradução e necessidade de outros tipos de representação para os dados. 
 
-## Princípios das bases de dados não relacionais
+## NoSQL Principles
+
+- Polyglot persistence, usar diferentes data-stores para diferentes circunstâncias. Assim, as relational databases são apenas mais uma escolha, não a única alternativa;
+- Schemaless data models;
+- Weaker consistency models (scale is easier);
+- 
 
 - non-relational, large scale, distributed and global scope
 - history
