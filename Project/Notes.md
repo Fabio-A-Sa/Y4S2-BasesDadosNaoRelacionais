@@ -15,6 +15,13 @@
 - disponível apenas em Python e Javascript (Node.js);
 - tem os benefícios anteriores. tem map-reduce indexes;
 
+## OrientDB
+
+- https://orientdb.org
+- editor de grafos, visualizador, command line, tudo bom
+- disponível em várias linguagens
+- boa documentação
+
 ## Refs
 
 - https://db-engines.com/en/ranking/document+store
