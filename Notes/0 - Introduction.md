@@ -1,8 +1,13 @@
 # Introduction
 
-- Relational databases values
-- Impedance mismatch and Big Data -> use NoSQL
-- Exemplos
+As bases de dados relacionais são as mais comuns por permitirem:
+
+- Persistence;
+- Concurrency;
+- Integration;
+- Standard, SQL;
+
+No entanto o `Impedance Mismatch` (), acabou por tornar 
 
 ## Princípios das bases de dados não relacionais
 
