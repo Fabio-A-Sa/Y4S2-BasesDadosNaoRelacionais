@@ -19,3 +19,8 @@ No entanto o `Impedance Mismatch` (diferenças de representação entre relation
 
 - Better in distributed systems;
 - Em relational models a distribuição dos dados é difícil já que existem muitas interdependênicas entre tabelas;
+- Só consegue garantir as propriedades ACID para um agregado, não para um conjunto destes;
+
+## Distributed Models
+
+Next classs
