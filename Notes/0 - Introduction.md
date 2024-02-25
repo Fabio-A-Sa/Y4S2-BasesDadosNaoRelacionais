@@ -23,4 +23,3 @@ No entanto o `Impedance Mismatch` (diferenças de representação entre relation
 
 ## Distributed Models
 
-Next classs
