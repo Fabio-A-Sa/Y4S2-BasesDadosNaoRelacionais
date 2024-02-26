@@ -23,3 +23,11 @@ No entanto o `Impedance Mismatch` (diferenças de representação entre relation
 
 ## Distributed Models
 
+
+
+Data models
+
+relational data models
+Aggregate data models
+Agrrefte ignorant models
+
