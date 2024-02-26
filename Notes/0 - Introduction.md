@@ -34,7 +34,9 @@ Um data model é um modelo que serve para saber como os dados são manipulados, 
 
 - Os dados são guardados num conjunto de colunas, usando uma key única;
 - `Column families` são grupos de dados relacionados;
-- 
+- Como temos rows como unidade de storage, ajuda na performance;
+- `Row-oriented`: cada row é um agregado, com as colunas a representarem os dados (profile, order history...);
+- `Column-oriented`: cada coluna é um agregado (por exemplo profiles), com as rows a representarem cada um dos profiles;
 
 ### Distributed Models
 
