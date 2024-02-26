@@ -13,7 +13,7 @@ A consistência é apenas garantida em operações de um registo. Existe uma con
 
 #### 2 - Querying
 
-A única forma de consultar a base de dados é pela sua chave, mesmo que seja temporária. Normalmente as chaves são temporárias quando queremos implementar uma cache.
+A única forma de consultar a base de dados é pela sua chave, mesmo que seja temporária. Normalmente as chaves são temporárias quando queremos implementar uma cache memory.
 
 #### 3 - Writing
 
@@ -34,6 +34,4 @@ A atomicidade é garantida tanto na leitura como na escrita.
 
 ## Redis
 
-TODO
-
-See tutorial
+TODO - See tutorial
