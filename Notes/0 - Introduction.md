@@ -9,25 +9,31 @@ As bases de dados relacionais são as mais comuns por permitirem:
 
 No entanto o `Impedance Mismatch` (diferenças de representação entre relational data model and in-memory datastructures), acabou por tornar popular o NoSQL (Not Only SQL), que possibilita a tradução e necessidade de outros tipos de representação para os dados. 
 
-## NoSQL Principles
+### NoSQL Principles
 
 - Polyglot persistence, usar diferentes data-stores para diferentes circunstâncias. Assim, as relational databases são apenas mais uma escolha, não a única alternativa;
 - Schemaless data models;
 - Weaker consistency models (scale is easier);
 
-## Agregate Data Models
+## Data Models
+
+Um data model é um modelo que serve para saber como os dados são manipulados, descrevendo como a base de dados interage com os dados em si. Não confundir com `Storage Model`, que é a descrição de como os dados são organizados internamente. Não confundir com o `Conceptual Model`, que descreve os conceitos high-level e relações do domínio do problema.
+
+### Agregate Data Models
 
 - Better in distributed systems;
 - Em relational models a distribuição dos dados é difícil já que existem muitas interdependênicas entre tabelas;
-- Só consegue garantir as propriedades ACID para um agregado, não para um conjunto destes;
+- Só consegue garantir as propriedades ACID para um agregado (é como um documento), não para um conjunto destes;
+- Permitem transações facilmente;
 
-## Distributed Models
+### Key-Value in Document Data Models
+
+- Semelhante aos Aggregate, embora tenham umas queries mais dependentes das keys e não tanto do agregado em si;
+
+### Column-Family Databases
 
 
 
-Data models
+### Distributed Models
 
-relational data models
-Aggregate data models
-Agrrefte ignorant models
-
+Next class
