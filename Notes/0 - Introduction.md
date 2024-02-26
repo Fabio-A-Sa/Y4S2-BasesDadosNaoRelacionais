@@ -26,13 +26,15 @@ Um data model é um modelo que serve para saber como os dados são manipulados, 
 - Só consegue garantir as propriedades ACID para um agregado (é como um documento), não para um conjunto destes;
 - Permitem transações facilmente;
 
-### Key-Value in Document Data Models
+#### 1 - Key-Value in Document Data Models
 
 - Semelhante aos Aggregate, embora tenham umas queries mais dependentes das keys e não tanto do agregado em si;
 
-### Column-Family Databases
+#### 2 - Column-Family Databases
 
-
+- Os dados são guardados num conjunto de colunas, usando uma key única;
+- `Column families` são grupos de dados relacionados;
+- 
 
 ### Distributed Models
 
