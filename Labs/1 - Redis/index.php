@@ -1,6 +1,8 @@
 <html>
-<h1>Bookit!</h1>
+
+<h1>Bookit! - BDRN Lab 1</h1>
 <h2>Latest Bookmarks</h2>
+
 <?php
 
 function present_bookmarks($bookmarks, $redis) {
