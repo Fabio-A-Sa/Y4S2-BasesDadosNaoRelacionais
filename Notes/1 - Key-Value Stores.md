@@ -34,4 +34,4 @@ A atomicidade é garantida tanto na leitura como na escrita.
 
 ## Redis
 
-TODO - See tutorial
+See tutorial
