@@ -42,19 +42,19 @@ Um data model é um modelo que serve para saber como os dados são manipulados, 
 
 Podemos distribuir e escalar os modelos de forma vertical (melhorar o harware, com limites físicos) ou horizontal (maior quantidade de nós ou clusters). O modelo *aggregate oriented* encaixa bem neste sistema distribuído horizontalmente, tornando o sistema mais fiável e resiliente.
 
-Tipos de distribuição:
-
-#### 2.1 - Single Server
-
 Pode fazer sentido ter um sistema não relacional mesmo que não haja distribuição, pois os dados podem ser formulados do tipo key-based ou grafos (muitas interdependências).
 
-### 2.2 - Sharding
+Tipos de distribuição:
+
+#### 2.1 - Sharding
 
 Os dados são fragmentados e distribuídos em vários nós do sistema. É uma solução adequada quando temos padrões de operações disjuntas (nunca vamos ter de fazer leituras em mais do que um servidor, como por exemplo o email). Melhora significativamente as operações de leitura e escrita. No entanto, como não temos qualquer replicação, acaba pelo sistema não ficar mais protegido (continua a ser um ponto único de falha).
 
 Os nós são organizados/definidos por determinados critérios, como por ordem alfabética, geográfica, com base no tempo (dados atuais, dados antepassados).
 
-### 2.3 - Primary Replica
+### 2.2 - Replication
+
+#### 2.2.1 - Primary Replication
 
 Temos um nó primário para os dados e depois temos nós numa rede distribuída que replicam esses dados. Apenas o nó primário permite escrita, mas todos os nós permitem leitura.
 
@@ -62,7 +62,6 @@ A escalabilidade horizontal é muito simples, mas pouco adequado quando as opera
 
 O principal risco da abordagem é a inconsistência entre os valores entre todas as réplicas.
 
-### 2.4 - Peer-to-Peer Replication
+#### 2.2.2 - Peer-to-Peer Replication
 
 Todos os nós aceitam escritas e todos aceitam leituras. Os riscos de inconsistências são muito maiores, mas ajuda a balancear a carga quando houver muitas operações de escrita e leitura.
-
