@@ -1,7 +1,7 @@
 <html>
 
 <h1>Bookit! - BDRN Lab 1</h1>
-<h2>Latest Bookmarks</h2>
+<h2>Latest Bookmarks:</h2>
 
 <?php
 
@@ -10,22 +10,33 @@ require __DIR__ . '/vendor/autoload.php';
 Predis\Autoloader::register();
 
 function showBookmarks($bookmarks, $redis) {
+
     echo "<ul>";
+
         foreach ($bookmarks as $bookmark) {
             $url = $redis->hget("bookmark:" . $bookmark, "url");
             $tags = $redis->smembers("bookmark:" . $bookmark . ":tags");
+            $tagURLs = [];
+            foreach ($tags as $tag) {
+                $tagURLs[] = '<a href="/?tags=' . $tag . '">' . $tag . '</a>';
+            }
+            $allTags = implode(', ', $tagURLs);
         ?>
-        
+
         <li>
             <h4><?= $url ?></h4>
-            <h5>[
-            <?php foreach($tags as $tag) {
-                echo $tag;
-            }; ?>
-            ]</h5>
+            <h5>
+                [
+                    <?php 
+                        echo $allTags;
+                    ?>
+                ] 
+            </h5>
         </li>
 
-    <?php } echo "</ul>";
+        <?php } 
+
+    echo "</ul>";
 }
 
 try {
