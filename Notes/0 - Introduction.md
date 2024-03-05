@@ -65,3 +65,39 @@ O principal risco da abordagem é a inconsistência entre os valores entre todas
 #### 2.2.2 - Peer-to-Peer Replication
 
 Todos os nós aceitam escritas e todos aceitam leituras. Os riscos de inconsistências são muito maiores, mas ajuda a balancear a carga quando houver muitas operações de escrita e leitura.
+
+## Data consistency
+
+No contexto dos sistemas distribuídos, a noção de consistência é mais voltada aos updates e às leituras, podendo ser relaxados por motivos de escalabilidade e eficiência.
+
+### Update consistency
+
+Os updates devem ser sem conflitos, com ordem bem definida. Numa abordagem pessimista, temos uma estratégia que garanta que não ocorre conflitos (locks), na abordagem otimista não temos qualquer consideração em particular, com estratégias para a correção de conflitos casos ocorram. Isto é um tradeoff entre segurança e desempenho.
+
+No entanto, usando um nó que apenas permite escritas ajuda neste processo.
+
+### Read consistency
+
+Os dados podem estar parcialmente atualizados, e uma leitura de um nó deste género pode comprometer operações futuras.
+
+TODO
+
+### Replicated Read consistency
+
+TODO
+
+### Session consistency
+
+Ter consistência pelo menos ao nível da sessão. 
+
+TODO
+
+### Relaxing consistency
+
+....
+
+
+
+## Distributed Data Processing
+
+Next class
