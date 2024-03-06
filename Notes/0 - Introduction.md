@@ -72,32 +72,30 @@ No contexto dos sistemas distribuídos, a noção de consistência é mais volta
 
 ### Update consistency
 
-Os updates devem ser sem conflitos, com ordem bem definida. Numa abordagem pessimista, temos uma estratégia que garanta que não ocorre conflitos (locks), na abordagem otimista não temos qualquer consideração em particular, com estratégias para a correção de conflitos casos ocorram. Isto é um tradeoff entre segurança e desempenho.
+Os updates devem ser sem conflitos, com ordem bem definida. Numa abordagem pessimista, temos uma estratégia que garanta que não ocorre conflitos (usando locks, por exemplo), na abordagem otimista não temos qualquer consideração em particular, com estratégias para a correção de conflitos casos estes ocorram. Isto é, há sempre um tradeoff entre segurança e desempenho.
 
 No entanto, usando um nó que apenas permite escritas ajuda neste processo.
 
 ### Read consistency
 
-Os dados podem estar parcialmente atualizados, e uma leitura de um nó deste género pode comprometer operações futuras.
-
-TODO
+Os dados podem estar parcialmente atualizados, e uma leitura de um nó deste género pode comprometer operações futuras. Neste tipo de bases de dados só podemos ter transactions se tivermos agregados bem desenhados, sem dependências externas.
 
 ### Replicated Read consistency
 
-TODO
+A replicação dos mesmos dados é mais complexa com distribuição entre clusters, com aposta na *eventual consistency*.
 
 ### Session consistency
 
-Ter consistência pelo menos ao nível da sessão. 
-
-TODO
+Ter consistência pelo menos ao nível da sessão, em modo *read-your-write* em nós específicos, mas reduz a abilidade de fazer load balance no sistema.
 
 ### Relaxing consistency
 
-....
+Importante para manter a escalabilidade e eficiência. Como as transações são algo que não se pode usar dado o *sharding* inerente, temos de olhar ao `CAP Theorem` (consistency, availability, partitioning).
+
+### Relaxing Durability
 
 
 
 ## Distributed Data Processing
 
-Next class
+TODO: Next class
