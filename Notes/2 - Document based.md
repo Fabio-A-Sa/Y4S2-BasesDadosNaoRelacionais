@@ -11,7 +11,7 @@ Usam a *primary replica model*, em que apenas um nó é responsável por process
 Só podem existir transactions dentro do mesmo documento, garantindo propriedades ACID. A técnica map-reduce é usada para manipular vários agregados com configurações distribuídas.
 
 - `Escalamento de reads`: só colocar mais nós, escalamento horizontal;
-- `Escalamento de writes`: usando sharding. Aqui os dados podem ser partidos por chave e por valor;
+- `Escalamento de writes`: usando sharding. Aqui os dados podem ser partidos por chave e por valor. Também é escalamento horizontal;
 
 Os joins podem ser diminuidos se houver uma **desnormalização** da estrtura do documento. De qualquer maneira, as associações entre documentos podem ser mapeadas em dois tipos:
 
@@ -32,4 +32,9 @@ Além disso as associações podem ser de três tipos principais:
 
 ### When not to use
 
+- Operações complexas, com muitos joins;
+- Casos de integridade muito restrita, com schema fixo;
 
+## MongoDB
+
+Os indexes são importantes para dar improvement ao selecionamento de atributos. Nesta tecnologia, são implementados com base em B-Trees. 
