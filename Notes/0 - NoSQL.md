@@ -92,9 +92,16 @@ Ter consistência pelo menos ao nível da sessão, em modo *read-your-write* em 
 
 Importante para manter a escalabilidade e eficiência. Como as transações são algo que não se pode usar dado o *sharding* inerente, temos de olhar ao `CAP Theorem` (consistency, availability, partitioning).
 
+#### Quoruns
+
+Para uma consistência, é necessário que a maioria dos nós de um sistema concordem com um valor. Dado N nós:
+
+> Write-quoruns: W > 1/2 dos nós que participam na replicação <br>
+> Read-quoruns: R + W > N <br>
+
 ### Relaxing Durability
 
-
+Por exemplo, no caso de carrinhos de compras em web systems, utilizadores não registados podem ter os seus dados apenas em browser cache, sem depender do servidor para requests à base de daods.
 
 ## Distributed Data Processing
 
