@@ -1,4 +1,4 @@
-# Introduction
+# Introduction to NoSQL
 
 As bases de dados relacionais são as mais comuns por permitirem:
 
