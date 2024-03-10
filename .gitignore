@@ -1,3 +1,3 @@
 .DS_Store
-./Labs/1\ -\ Redis/redis-data/*
-./Labs/2\ -\ Mongo/mongo-data/*
+redis-data/
+mongo-data/
