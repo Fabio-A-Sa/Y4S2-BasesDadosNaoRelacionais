@@ -105,4 +105,13 @@ Por exemplo, no caso de carrinhos de compras em web systems, utilizadores não r
 
 ## Distributed Data Processing
 
-TODO: Next class
+Os clusters impactam o data storage e o data processing. Minimizar e centralizar o processamento no nó que contem os dados relevantes é importante, utilizando o padrão `Map-Reduce`.
+
+### Map-Reduce Pattern
+
+Baseado na programação funcional.
+
+- `Map`: pega num agregado e produz several outputs em forma key-value pairs;
+- `Reduce`: pega nos outputs da etapa anterior, dos diferentes nós, e agrega estes pares, fazendo a consolidação dos dados;
+
+É uma arquitetura cujo o primeiro passo é altamente paralelizável. Troca a flexibilidade da forma com que os dados são organizados em favor da paralelização de cálculos com esses.
