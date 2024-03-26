@@ -13,3 +13,21 @@ Não confundir com `column-oriented DBMS` ou `columnar DBMS`. Estas últimas usa
 - Ao contrário de key-value, o valor é visível e estruturado, pelo que pode ser usado para partições e distribuições;
 - Ao contrário de document-based, onde todo o agregado é usado, aqui pode haver partições dos dados, permitindo uma maior flexibilidade;
 
+### Distribuição
+
+- Peer-to-peer model (no node is a master);
+- Todos os nodes aceitam reads e writes, quorum-based;
+- Permite high scalability and availability of both reads and writes is a feature hightlight;
+- Transactions existem nas rows;
+- Transações envolvendo mais do que uma operação não são suportadas;
+- Ambas as reads e writes operations aumentam horizontalmente com a adição de novas máquinas;
+
+### Data Modeling
+
+Os dados são agrupados na medida em que vão ser acedidos pelas queries. As primary keys permitem:
+
+- Uniqueness;
+- Partition, in case of the distributed systems;
+
+Há também a desnormalização dos dados, para serem mais flexíveis sem comprometer a eficiência das queries, porque neste caso joins não são possíveis.
+
