@@ -31,3 +31,15 @@ Os dados são agrupados na medida em que vão ser acedidos pelas queries. As pri
 
 Há também a desnormalização dos dados, para serem mais flexíveis sem comprometer a eficiência das queries, porque neste caso joins não são possíveis.
 
+### Use Cases
+
+- Large volumes of data, porque os dados podem ser partidos facilmente em rows e em columns;
+- Para sistemas com high availability and scalability;
+- Disjoint data access patterns;
+- Geographical distribution;
+
+### When not to use
+
+- Propriedades ACID para reads e writes;
+- Para dar update de todo um tuplo;
+- Aggregate queries;
