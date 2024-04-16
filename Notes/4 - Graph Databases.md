@@ -15,4 +15,32 @@ As travessias entre relações são armazenadas diretamente o que as torna efici
 - `Hypergrafos`: quando uma aresta liga um conjunto de vértices;
 - `Nested graphs`: quando há grafos dentro dos nós, por exemplo, em desenho de redes de computadores;
 
+### Consistency, Transactions and Availability
+
+Para servidores singulares, a consistência é sempre garantida. Em sistemas distribuídos, um nó-mestre é usado para replicação.
+
+A consistência também é garantida durante transações. Os writes sempre requerem transações, porque a travessia pode ser grande.
+
+### Scaling
+
+- Adicionar RAM: melhora nos reads e nos writes;
+- Adicionar mais nós read-only: melhora no reads;
+
+Infelizmente não há forma excelente de escalar, porque 
+
+### Data Modeling
+
+
+### Use cases
+
+- Domínios complexos;
+- Quando domínios são distintos mas que tenham partes em comum;
+- 
+
+### Limitations
+
+- Não há uma standard query language;
+- Escalabilidade, porque é complicado fazer sharding;
+- Deal with complex data;
+- Quando os updates globais são frequentes;
 
