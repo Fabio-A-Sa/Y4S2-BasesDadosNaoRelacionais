@@ -1,6 +1,6 @@
 # Graph Databases
 
-O volume deixa de ser o principal factor, mas sim a interligação / relações entre entidades. O foco é `relationship-oriented` e não aggregate-oriented.
+O volume deixa de ser o principal factor, mas sim a interligação / relações entre entidades. O foco é `relationship-oriented` e não aggregate-oriented. É schema-optional, porque é bastante flexível.
 
 Os **vértices** representam entidades e as **arestas** representam relações entre estas entidades. Os vértices sabem das suas relações incoming e de outgoing.
 
@@ -26,16 +26,19 @@ A consistência também é garantida durante transações. Os writes sempre requ
 - Adicionar RAM: melhora nos reads e nos writes;
 - Adicionar mais nós read-only: melhora no reads;
 
-Infelizmente não há forma excelente de escalar, porque 
+Infelizmente não há forma excelente de escalar, porque não há sharding. A escalabilidade horizontal é bastante complexa.
 
 ### Data Modeling
 
+- Use generic data labels;
+- Move properties to labels;
+- Use data denormalization;
 
 ### Use cases
 
 - Domínios complexos;
 - Quando domínios são distintos mas que tenham partes em comum;
-- 
+- Powerfull modeling language;
 
 ### Limitations
 
@@ -43,4 +46,5 @@ Infelizmente não há forma excelente de escalar, porque
 - Escalabilidade, porque é complicado fazer sharding;
 - Deal with complex data;
 - Quando os updates globais são frequentes;
+- Quando há cálculos em grupo, como médias e afins;
 
