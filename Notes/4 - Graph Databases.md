@@ -28,7 +28,7 @@ A consistência também é garantida durante transações. Os writes sempre requ
 
 Infelizmente não há forma excelente de escalar, porque não há sharding completo, dependendo do número de ligações. A escalabilidade horizontal é bastante complexa.
 
-### Data Modeling
+### Data Modeling Techniques
 
 - Use generic data labels;
 - Move properties to labels;
@@ -47,4 +47,3 @@ Infelizmente não há forma excelente de escalar, porque não há sharding compl
 - Deal with complex data;
 - Quando os updates globais são frequentes;
 - Quando há cálculos em grupo, como médias e afins;
-
