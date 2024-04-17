@@ -26,7 +26,7 @@ A consistência também é garantida durante transações. Os writes sempre requ
 - Adicionar RAM: melhora nos reads e nos writes;
 - Adicionar mais nós read-only: melhora no reads;
 
-Infelizmente não há forma excelente de escalar, porque não há sharding. A escalabilidade horizontal é bastante complexa.
+Infelizmente não há forma excelente de escalar, porque não há sharding completo, dependendo do número de ligações. A escalabilidade horizontal é bastante complexa.
 
 ### Data Modeling
 
