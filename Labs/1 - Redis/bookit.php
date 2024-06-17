@@ -1,30 +1,29 @@
 <?php
 
-$url = $_POST["url"];
-$tags = $_POST["tags"];
-
 require __DIR__ . '/vendor/autoload.php';
+require __DIR__. '/backend.php';
 
 Predis\Autoloader::register();
 
 try {
+    // Connect to the localhost Redis server.
+    $redis = new Predis\Client();
 
-	$redis = new Predis\Client();
+    // Get URL and tags from POST data
+    $url = $_POST['url'];
+    $tags = explode(' ', $_POST['tags']);
 
-    $bookmark_id = $redis->incr("next_bookmark_id");
-    $redis->zadd("bookmarks", [$bookmark_id => $bookmark_id]);
-    $bookmark_key = "bookmark:" . $bookmark_id;
+    
+    addBookmark($url, $tags);
 
-    $redis->hset($bookmark_key, "url", $url);
-    $actual_tags = explode(",", $tags);
+    header("Location: index.php");
+    exit();
 
-    foreach ($actual_tags as $actual_tag) {
-      $redis->sadd($bookmark_key . ":tags", [$actual_tag]);
-      $redis->sadd("tag:" . $actual_tag, [$bookmark_id]);
-    }
+    
 
-    print_r($redis->zrange("bookmarks", -15, -1));
-	
-} catch(Exception $e){
-	print $e->getMessage();
-} header('Location: /'); ?>
+
+} catch (Exception $e) {
+    echo "An error occurred: " . $e->getMessage();
+}
+
+?>

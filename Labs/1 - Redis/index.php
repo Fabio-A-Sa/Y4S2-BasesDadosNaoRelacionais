@@ -1,75 +1,31 @@
-<html>
-
-<h1>Bookit! - BDRN Lab 1</h1>
-<h2>Latest Bookmarks:</h2>
-
 <?php
 
 require __DIR__ . '/vendor/autoload.php';
+require __DIR__. '/backend.php';
 
 Predis\Autoloader::register();
 
-function showBookmarks($bookmarks, $redis) {
-
-    echo "<ul>";
-
-        foreach ($bookmarks as $bookmark) {
-            $url = $redis->hget("bookmark:" . $bookmark, "url");
-            $tags = $redis->smembers("bookmark:" . $bookmark . ":tags");
-            $tagURLs = [];
-            foreach ($tags as $tag) {
-                $tagURLs[] = '<a href="/?tags=' . $tag . '">' . $tag . '</a>';
-            }
-            $allTags = implode(', ', $tagURLs);
-        ?>
-
-        <li>
-            <h4><?= $url ?></h4>
-            <h5>
-                [
-                    <?php 
-                        echo $allTags;
-                    ?>
-                ] 
-            </h5>
-        </li>
-
-        <?php } 
-
-    echo "</ul>";
-}
+session_start(); // Start session
 
 try {
-
+    // Connect to the localhost Redis server.
     $redis = new Predis\Client();
-    $bookmarks = array();
 
-    // Next ID
-    if (!$redis->exists("next_bookmark_id")) {
-        $redis->set("next_bookmark_id", "0");
-    }
-
-    // With parameters -> show
-    if (isset($_GET["tags"])) {
-        $tags = explode(",", $_GET["tags"]);
-        foreach ($tags as $tag) {
-            $bookmarks[] =  "tag:".$tag;
-        }
-
-        $bookmarks = $redis->sinter($bookmarks);
-    
-    // Without parameters -> show last 15, if available
+    // Check if the user is already logged in
+    if(isset($_SESSION['user_id'])) {
+        // User is already logged in, perform actions accordingly
+        // For example, display bookmarks or redirect to another page
+        header("Location: home.php");
+        exit(); // Stop further execution
     } else {
-        $bookmarks = $redis->zrange("bookmarks", -15, -1);
+        // If the user is not logged in, redirect to login page
+        header("Location: login.php");
+        exit(); // Stop further execution
     }
 
-    showBookmarks($bookmarks, $redis);
+    // If user is logged in, continue displaying bookmarks or performing other actions
 
 } catch (Exception $e) {
-    print $e->getMessage();
-} ?>
-
-<a href="index.php">Home</a>
-<a href="add.html">Add another bookmark!</a>
-
-</html>
+    echo "An error occurred: " . $e->getMessage();
+}
+?>
